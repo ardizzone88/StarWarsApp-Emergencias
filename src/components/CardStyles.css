@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+/* Fuente Star Jedi */
+@font-face {
+  font-family: 'StarJedi';
+  src: url('https://fonts.cdnfonts.com/s/17418/Starjedi.ttf') format('truetype');
+}
+
+/* Fondo oscuro */
+body {
+  background: radial-gradient(circle at 50% 50%, #000000, #0d0d0d);
+  color: #feda4a;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Estilos del spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.loading-text {
+  font-family: 'StarJedi', sans-serif; /* Fuente Star Wars */
+  font-size: 2rem;
+  color: #feda4a;
+  animation: slideUp 3s ease-in-out forwards;
+  margin-top: 20px;
+}
+.text-center{
+  color:#feda4a;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos del buscador */
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 100%; /* Ocupa todo el espacio disponible */
+  padding-right: 40px; /* Espacio para la lupa */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px; /* Posiciona la lupa a la derecha dentro del input */
+  top: 50%;
+  transform: translateY(-50%); /* Centra verticalmente la lupa */
+  color: #999; /* Color de la lupa */
+  font-size: 1.2rem; /* Tamaño de la lupa */
+  pointer-events: none; /* Hace que la lupa no interfiera con el clic en el input */
+}
+.card-custom {
+  width: 25rem; /* Achica el tamaño de las tarjetas */
+  height: auto; /* Permite que la tarjeta se ajuste a su contenido */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra suave por defecto */
+}
+
+.card-custom:hover {
+  transform: scale(1.05); /* Zoom in */
+  box-shadow: 0 10px 20px #feda4a; /* Sombra amarilla */
+}
+
+.card-img-top {
+  height: 200px; /* Ajusta el tamaño de la imagen para coincidir con las tarjetas más pequeñas */
+  width: 100%;
+  object-fit: contain;
+  transition: transform 0.1s ease-in-out;
+}
+
+.card-custom:hover .card-img-top {
+  transform: scale(1.05); /* Zoom in en la imagen también */
+}
